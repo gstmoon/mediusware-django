@@ -13,13 +13,10 @@
     <form action="" method="get" class="card-header">
         <div class="form-row justify-content-between">
             <div class="col-md-2">
-                <input type="text" name="title" placeholder="Product Title" class="form-control">
+                {{filter.form.title}}
             </div>
             <div class="col-md-2">
-                <select name="variant" id="" class="form-control">
-                    <option selected disabled>--Select A Variant--</option>
-
-                </select>
+                {{filter.form.productvariant}}
             </div>
 
             <div class="col-md-3">
@@ -55,7 +52,7 @@
                 </thead>
 
                 <tbody>
-                    {% for product in products %}
+                    {% for product in filter.qs %}
                     <tr>
                         <td>{{forloop.counter}}</td>
                         <td>{{product.title}} <br> Created at : {{product.created_at|naturaltime}}</td>
