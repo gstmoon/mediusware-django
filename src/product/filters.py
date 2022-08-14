@@ -21,6 +21,15 @@ class ProductFilter(django_filters.FilterSet):
             }
     ))
 
+    created_at = django_filters.DateFilter(
+        label='Date',
+        widget=forms.widgets.DateInput(
+            attrs={
+                'type': 'date',
+                'class': 'form-control',
+            }
+        ))
+
     class Meta:
         model = Product
         fields = [
